@@ -1,12 +1,12 @@
 class Category < ActiveRecord::Base
     def create
-        Kategori.create(kategori_params)
+        Category.create(category_params)
     end
     
     private
     
-    def kategori_params
-        params.require(:kategori).permit(:name)
+    def category_params
+        params.require(:categiry).permit(:name)
     end
     has_many :posts
 end
