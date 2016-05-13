@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  get 'pages/about'
+
+  get 'pages/contact'
+
+  get 'pages/resources'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
-    ActiveAdmin.routes(self) rescue true
+    ActiveAdmin.routes(self) rescue true 
   resources :categories
   resources :categories
   resources :categories
@@ -18,6 +24,10 @@ Rails.application.routes.draw do
     
     resources :posts
     resources :categories
+    
+    match '/about', :to => 'pages#about', via: :all
+    match '/contact', :to => 'pages#contact', via: :all
+    match '/resources', :to => 'pages#resources', via: :all
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
