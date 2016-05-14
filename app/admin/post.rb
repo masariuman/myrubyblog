@@ -13,6 +13,14 @@ ActiveAdmin.register Post do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
+    permit_params :title, :admin_user_id, :category, :created_at
+    index do
+        column :title
+        column "Author",:admin_user
+        column :category
+        column :created_at
+        actions
+    end
 
 end
+ 

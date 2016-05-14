@@ -12,7 +12,7 @@
   def show
       @category = Category.find(params[:id])
       @title = @category.name
-      @posts = @category.posts
+      @post = @category.posts
   end
 
  

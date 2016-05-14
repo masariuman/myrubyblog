@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 gem 'coffee-script-source','1.8.0'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'ransack'
+#gem 'tinymce-rails'
 #gem 'activeadmin'
 
 

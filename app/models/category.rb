@@ -6,7 +6,7 @@ class Category < ActiveRecord::Base
     private
     
     def category_params
-        params.require(:categiry).permit(:name)
+        params.require(:category).permit(:name)
     end
     has_many :posts
 end

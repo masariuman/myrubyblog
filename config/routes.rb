@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :post_comments
+  resources :comments
+  get 'search/index'
+
   get 'pages/about'
 
   get 'pages/contact'
@@ -24,6 +28,7 @@ Rails.application.routes.draw do
     
     resources :posts
     resources :categories
+    resources :search
     
     match '/about', :to => 'pages#about', via: :all
     match '/contact', :to => 'pages#contact', via: :all

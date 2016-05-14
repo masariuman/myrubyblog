@@ -1,9 +1,37 @@
+<div class="post">
+    
 <h1><%= @post.title %></h1>
 <small><%= @post.created_at.strftime("%b %d, %Y") %></small>
+    <small><p>Created By : <%= @post.admin_user.name %></p></small>
 <p><%= @post.body %></p>
 
 Category: <%= link_to @post.category.name,category_path(:id => @post.category.id) %><br />
 
 <%= link_to "Go Back",posts_path %>
+
+    <hr>
+    <%= form_for @comment do |f| %>
+        <%= f.hidden_field :post_id %>
+        <p>
+            <%= f.label :name %><br />
+            <%= f.text_field :name %>
+        </p>
+        <p>
+            <%= f.label :email %><br />
+            <%= f.text_field :email %>
+        </p>
+        <p>
+            <%= f.label :body %><br />
+            <%= f.text_area :body %>
+        </p>
+        <p>
+            <%= f.submit "Post Comment" %>
+        </p>
+    <% end %>
+    <br />
+    
+    <%= render :partial => "partials/comment", :collection => @post.post_comment %>
+
+</div>
 
 <!--<h1>Sample Post</h1>-->
