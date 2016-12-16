@@ -3,6 +3,9 @@ gem 'coffee-script-source','1.8.0'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'ransack'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+#gem "paperclip", "~> 3.5.3"
+gem 'paperclip'
 #gem 'tinymce-rails'
 #gem 'activeadmin'
 
